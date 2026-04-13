@@ -17,11 +17,11 @@ export default function Home() {
 
       <Slide image="/images/slide3.png"></Slide>
 
-      <Slide image="/images/slide4.png">
-        <button style={btnStyle}>Lihat Lokasi</button>
-      </Slide>
+      <Slide image="/images/slide4.png"></Slide>
 
-      <Slide image="/images/slide5.png"></Slide>
+      <Slide image="/images/slide5.png">
+        <button style={btnStyle2}>Open Location</button>
+      </Slide>
       <Slide image="/images/slide6.png"></Slide>
     </main>
   );
@@ -33,12 +33,22 @@ const textStyle: React.CSSProperties = {
 };
 
 const btnStyle: React.CSSProperties = {
-  background: "#c1121f",
+  background: "#9e1001",
   color: "#fff",
   padding: "14px 28px",
   borderRadius: "12px",
   border: "none",
   marginTop: "600px",
+  fontSize: "16px",
+  cursor: "pointer",
+};
+const btnStyle2: React.CSSProperties = {
+  background: "#9e1001",
+  color: "#fff",
+  padding: "14px 20px",
+  borderRadius: "12px",
+  border: "none",
+  marginTop: "480px",
   fontSize: "16px",
   cursor: "pointer",
 };
