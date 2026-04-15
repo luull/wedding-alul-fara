@@ -4,8 +4,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import MusicPlayer from "./MusicPlayer";
 import Slide from "./Slide";
-export default function LandingPage({ initialName }: { initialName: string }) {
-  const guestName = initialName || "Tamu Undangan";
+export default function LandingPage({ guestName }: { guestName: string }) {
   const [copied, setCopied] = useState(false);
   const rekening = "6880458742";
 
