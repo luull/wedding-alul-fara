@@ -6,7 +6,7 @@ import { Check, Copy } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 import MusicPlayer from "./components/MusicPlayer";
 import Slide from "./components/Slide";
-
+export const dynamic = "force-dynamic";
 function Content() {
   const searchParams = useSearchParams();
   const guestName = searchParams.get("to") || "Tamu Undangan";
