@@ -17,6 +17,7 @@ export default function LandingPage({ guestName }: { guestName: string }) {
     }, 2000);
   };
 
+  const name = guestName || "Tamu Undangan";
   return (
     <main
       style={{
@@ -27,6 +28,7 @@ export default function LandingPage({ guestName }: { guestName: string }) {
     >
       <Slide image="/images/slide1.png">
         <p
+          suppressHydrationWarning
           style={{
             fontSize: "22px",
             fontWeight: 600,
@@ -35,7 +37,7 @@ export default function LandingPage({ guestName }: { guestName: string }) {
             textAlign: "center",
           }}
         >
-          {guestName}
+          {name}
         </p>
 
         <h2
