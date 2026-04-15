@@ -10,7 +10,6 @@ export default function Slide({ image, children }: SlideProps) {
         height: "auto",
         width: "100%",
         position: "relative",
-        scrollSnapAlign: "start",
         backgroundColor: "#f8f4f3",
       }}
     >
