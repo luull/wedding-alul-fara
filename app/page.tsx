@@ -1,10 +1,11 @@
-import { Suspense } from "react";
 import LandingPage from "./components/LandingPage";
 
-export default function Page() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <LandingPage />
-    </Suspense>
-  );
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { to?: string };
+}) {
+  const guestName = searchParams.to || "Tamu Undangan";
+
+  return <LandingPage guestName={guestName} />;
 }
