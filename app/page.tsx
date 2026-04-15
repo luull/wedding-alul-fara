@@ -5,7 +5,5 @@ export default function Page({
 }: {
   searchParams: { to?: string };
 }) {
-  const guestName = searchParams.to || "Tamu Undangan";
-
-  return <LandingPage guestName={guestName} />;
+  return <LandingPage initialName={searchParams.to || ""} />;
 }
