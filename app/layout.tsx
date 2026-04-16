@@ -26,7 +26,7 @@ export const metadata = {
     siteName: "Wedding Alul & Fara",
     images: [
       {
-        url: "https://wedding-alul-fara.vercel.app/couplegoals-new.png",
+        url: "https://wedding-alul-fara.vercel.app/cover.png",
         width: 1200,
         height: 630,
         alt: "Wedding Alul & Fara",
@@ -41,7 +41,7 @@ export const metadata = {
     title: "Wedding Alul & Fara",
     description:
       "With heartfelt gratitude, we invite you to celebrate our special day.",
-    images: ["https://wedding-alul-fara.vercel.app/couplegoals-new.png"],
+    images: ["https://wedding-alul-fara.vercel.app/cover.png"],
   },
 };
 export default function RootLayout({
