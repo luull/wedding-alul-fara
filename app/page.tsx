@@ -76,14 +76,14 @@ function Content() {
 
           <Slide image="/images/slide7.png">
             <button
-              onClick={() => handleCopy("bri")}
+              onClick={() => handleCopy("bca")}
               style={{ ...btnStyle4, left: "140px", top: "260px" }}
             >
-              {copied === "bri" ? <Check size={18} /> : <Copy size={18} />}
+              {copied === "bca" ? <Check size={18} /> : <Copy size={18} />}
             </button>
 
             <button
-              onClick={() => handleCopy("bca")}
+              onClick={() => handleCopy("bri")}
               style={{
                 ...btnStyle4,
                 right: "50px",
@@ -91,7 +91,7 @@ function Content() {
                 background: "#05408a",
               }}
             >
-              {copied === "bca" ? <Check size={18} /> : <Copy size={18} />}
+              {copied === "bri" ? <Check size={18} /> : <Copy size={18} />}
             </button>
             <button
               onClick={() => handleCopy("gopay")}
