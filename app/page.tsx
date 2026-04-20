@@ -11,16 +11,6 @@ function Content() {
   const searchParams = useSearchParams();
   const guestName = searchParams.get("to") || "Tamu Undangan";
 
-  const [copied, setCopied] = useState(false);
-  const rekening = "6880458742";
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(rekening);
-    setCopied(true);
-    toast.success("Copy Successful!");
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <div style={outerWrapper}>
       <div style={phoneWrapper}>
@@ -67,11 +57,7 @@ function Content() {
 
           <Slide image="/images/slide6.png" />
 
-          <Slide image="/images/slide7.png">
-            <button onClick={handleCopy} style={btnStyle4}>
-              {copied ? <Check size={18} /> : <Copy size={18} />}
-            </button>
-          </Slide>
+          <Slide image="/images/slide7.png" />
 
           <Slide image="/images/slide8.png" />
           <Toaster position="top-center" />
