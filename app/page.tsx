@@ -11,6 +11,23 @@ function Content() {
   const searchParams = useSearchParams();
   const guestName = searchParams.get("to") || "Tamu Undangan";
 
+  const [copied, setCopied] = useState<string | null>(null);
+  type Bank = "bca" | "gopay" | "dana" | "bri";
+
+  const rekeningMap: Record<Bank, string> = {
+    bca: "6880458742",
+    gopay: "081586298430",
+    dana: "081586298430",
+    bri: "1234567890",
+  };
+
+  const handleCopy = (bank: Bank) => {
+    const rekening = rekeningMap[bank];
+    setCopied(bank);
+    navigator.clipboard.writeText(rekening);
+    toast.success(`Copy ${bank.toUpperCase()} berhasil!`);
+    setTimeout(() => setCopied(null), 2000);
+  };
   return (
     <div style={outerWrapper}>
       <div style={phoneWrapper}>
@@ -57,7 +74,49 @@ function Content() {
 
           <Slide image="/images/slide6.png" />
 
-          <Slide image="/images/slide7.png" />
+          <Slide image="/images/slide7.png">
+            <button
+              onClick={() => handleCopy("bri")}
+              style={{ ...btnStyle4, left: "140px", top: "260px" }}
+            >
+              {copied === "bri" ? <Check size={18} /> : <Copy size={18} />}
+            </button>
+
+            <button
+              onClick={() => handleCopy("bca")}
+              style={{
+                ...btnStyle4,
+                right: "50px",
+                top: "260px",
+                background: "#05408a",
+              }}
+            >
+              {copied === "bca" ? <Check size={18} /> : <Copy size={18} />}
+            </button>
+            <button
+              onClick={() => handleCopy("gopay")}
+              style={{
+                ...btnStyle4,
+                left: "140px",
+                top: "380px",
+                background: "#268fb6",
+              }}
+            >
+              {copied === "gopay" ? <Check size={18} /> : <Copy size={18} />}
+            </button>
+
+            <button
+              onClick={() => handleCopy("dana")}
+              style={{
+                ...btnStyle4,
+                right: "50px",
+                top: "410px",
+                background: "#2c97d2",
+              }}
+            >
+              {copied === "dana" ? <Check size={18} /> : <Copy size={18} />}
+            </button>
+          </Slide>
 
           <Slide image="/images/slide8.png" />
           <Toaster position="top-center" />
@@ -90,8 +149,8 @@ const btnStyle2: React.CSSProperties = {
 const btnStyle4: React.CSSProperties = {
   background: "#9e1001",
   color: "#fff",
-  padding: "10px",
-  borderRadius: "12px",
+  padding: "5px",
+  borderRadius: "7px",
   position: "absolute",
   marginTop: "100px",
   marginLeft: "20px",
